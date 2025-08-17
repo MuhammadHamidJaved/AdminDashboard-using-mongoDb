@@ -87,8 +87,6 @@ A modern, responsive admin dashboard built with React, Node.js, Express, and Mon
    ```env
    PORT=5000
    MONGODB_URI=mongodb://localhost:27017/dashboard
-   # Or for MongoDB Atlas:
-   # MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/dashboard
    ```
 
 5. **Start MongoDB**
