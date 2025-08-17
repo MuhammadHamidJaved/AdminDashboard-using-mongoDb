@@ -1,0 +1,749 @@
+body {
+  background-color: #f8f9fc;
+}
+
+.card {
+  border-radius: 15px !important;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #444 !important;
+}
+
+.nav-link:hover {
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+.react-calendar {
+  border: none !important;
+  width: 100% !important;
+}
+
+/* Topbar */
+.top-search {
+  width: 100%;
+  max-width: 380px;
+  background: #f5f6fb;
+  border: 1px solid #f1f2f6;
+}
+
+@media (max-width: 575.98px) {
+  .top-search {
+    max-width: 200px;
+  }
+}
+.top-search .form-control,
+.top-search .input-group-text {
+  background: transparent;
+  box-shadow: none;
+}
+
+.icon-circle {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  outline: 0;
+  border-radius: 50%;
+  background: #f3f4f8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notify-dot {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  width: 9px;
+  height: 9px;
+  background: #ff4d4f;   /* red notification dot */
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.avatar-ring {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  padding: 2px;
+  background: #19c37d;       /* green ring */
+  display: grid;
+  place-items: center;
+}
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #f4f1fb;   /* soft lavender */
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Mobile sidebar states */
+@media (max-width: 767.98px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+  
+  .sidebar.sidebar-closed {
+    transform: translateX(-100%);
+  }
+}
+
+/* Desktop sidebar */
+@media (min-width: 768px) {
+  .sidebar {
+    position: relative;
+    transform: translateX(0) !important;
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* Sidebar overlay for mobile */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+}
+
+/* Main content adjustments */
+.main-content {
+  width: 100%;
+  min-height: 100vh;
+}
+
+@media (max-width: 767.98px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+.sidebar h4 {
+  color: #3f2b96;
+}
+
+.sidebar-link {
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: #555 !important;
+  font-weight: 500;
+}
+
+.sidebar-link:hover {
+  background: #ece6fa;
+  color: #3f2b96 !important;
+}
+
+.sidebar-link.active {
+  background: #7a3ff2;      /* purple highlight */
+  color: #fff !important;
+}
+
+.flex-fill {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Common styling for all sections */
+.section-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  transition: box-shadow 0.2s ease;
+}
+
+.section-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Responsive section card adjustments */
+@media (max-width: 767.98px) {
+  .section-card {
+    padding: 1rem;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section-card {
+    padding: 0.875rem;
+    min-height: 250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-card {
+    padding: 1.75rem;
+    min-height: 350px;
+  }
+}
+
+/* Responsive tables */
+@media (max-width: 767.98px) {
+  .table-responsive {
+    font-size: 0.875rem;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.5rem;
+  }
+}
+
+/* Hide text on small screens for sidebar */
+@media (max-width: 767.98px) {
+  .sidebar-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Overview Cards - Responsive Design */
+.overview-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+}
+
+.overview-content {
+  flex-grow: 1;
+  min-width: 0; /* Prevent text overflow */
+}
+
+.overview-title {
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.overview-value {
+  font-weight: 700;
+  line-height: 1;
+}
+
+.overview-icon {
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+/* Extra Small Screens (< 576px) */
+@media (max-width: 575.98px) {
+  .overview-title {
+    font-size: 0.7rem;
+  }
+  
+  .overview-value {
+    font-size: 1.2rem;
+  }
+  
+  .overview-card .card-body {
+    min-height: 60px;
+  }
+}
+
+/* Small Screens (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .overview-title {
+    font-size: 0.8rem;
+  }
+  
+  .overview-value {
+    font-size: 1.4rem;
+  }
+  
+  .overview-card .card-body {
+    min-height: 70px;
+  }
+}
+
+/* Medium Screens (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .overview-title {
+    font-size: 0.9rem;
+  }
+  
+  .overview-value {
+    font-size: 1.6rem;
+  }
+  
+  .overview-card .card-body {
+    min-height: 80px;
+  }
+}
+
+/* Large Screens (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .overview-title {
+    font-size: 1rem;
+  }
+  
+  .overview-value {
+    font-size: 1.8rem;
+  }
+  
+  .overview-card .card-body {
+    min-height: 90px;
+  }
+}
+
+/* Extra Large Screens (≥ 1200px) */
+@media (min-width: 1200px) {
+  .overview-title {
+    font-size: 1.1rem;
+  }
+  
+  .overview-value {
+    font-size: 2rem;
+  }
+  
+  .overview-card .card-body {
+    min-height: 100px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 575.98px) {
+  .container-fluid {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .btn-chip {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+  }
+  
+  .card-head h5,
+  .card-head h6 {
+    font-size: 1rem;
+  }
+}
+
+/* soft white card look used inside section-card wrappers */
+.soft-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Card headers - consistent styling */
+.card-head { 
+  margin-bottom: 1rem;
+}
+
+.card-head h5, .card-head h6 { 
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+/* Responsive card header adjustments */
+@media (max-width: 767.98px) {
+  .card-head {
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-head h5 {
+    font-size: 1rem;
+  }
+  
+  .card-head h6 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .card-head {
+    margin-bottom: 0.5rem;
+  }
+}
+.btn-chip {
+  border: 1px solid #e7e7f2;
+  background: #fff;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+}
+.link-viewall {
+  background: transparent;
+  border: 0;
+  color: #5b7bff;
+  font-weight: 600;
+}
+
+/* task status tiny badges */
+.badge-soft { padding: 2px 8px; border-radius: 999px; font-size: 12px; color:#333; background:#f2f2f2; }
+.bg-g{ background:#e9f7ef !important; }   /* green-ish for Complete */
+.bg-b{ background:#e9f2ff !important; }   /* blue-ish for Closed */
+.bg-y{ background:#fff6e6 !important; }   /* yellow-ish for In progress */
+
+/* goals */
+.goal-ring-wrap { width: 84px; }
+.tiny-bar { height: 6px; background:#f1f1f6; border-radius: 999px; overflow:hidden; }
+.tiny-bar-fill { height: 100%; background:#5b7bff; }
+
+/* calendar header */
+.month-pill {
+  padding: 6px 12px;
+  border-radius: 10px;
+  background:#f6f7fb;
+  color:#444;
+  font-weight: 500;
+}
+.segment { display:inline-flex; gap:4px; background:#f6f7fb; padding:4px; border-radius:10px; }
+.seg-btn { border:0; background:transparent; padding:6px 10px; border-radius:8px; font-weight:500; }
+.seg-btn.active { background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.06); }
+
+/* meeting tick bar */
+.meeting-tick { width:4px; height:28px; border-radius:4px; background:#7a3ff2; }
+
+/* react-calendar tweaks to match card */
+.react-calendar { width:100% !important; border:0 !important; }
+
+/* Analytics chart container - consistent across all screens */
+.analytics-chart-container {
+  position: relative;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.analytics-chart-container canvas {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Ensure consistent chart sizing */
+@media (max-width: 575.98px) {
+  .analytics-chart-container {
+    padding: 0.25rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .analytics-chart-container {
+    padding: 0.75rem 0;
+  }
+}
+
+/* Dark Mode Implementation - Complete Black Theme */
+.dark-mode {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Dark mode topbar */
+.dark-mode .topbar {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border-bottom-color: #333 !important;
+}
+
+.dark-mode .topbar .btn-link {
+  color: #ffffff !important;
+}
+
+/* Dark mode sidebar */
+.dark-mode .sidebar {
+  background-color: #111111 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .sidebar h4 {
+  color: #ffffff !important;
+}
+
+.dark-mode .sidebar-link {
+  color: #cccccc !important;
+}
+
+.dark-mode .sidebar-link:hover {
+  background: #333333 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .sidebar-link.active {
+  background: #444444 !important;
+  color: #ffffff !important;
+}
+
+/* Dark mode section cards */
+.dark-mode .section-card {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1px solid #333 !important;
+}
+
+.dark-mode .soft-card {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border: 1px solid #333 !important;
+}
+
+/* Dark mode search */
+.dark-mode .top-search {
+  background-color: #333333 !important;
+  border-color: #555 !important;
+}
+
+.dark-mode .top-search .form-control {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.dark-mode .top-search .form-control::placeholder {
+  color: #cccccc !important;
+}
+
+.dark-mode .top-search .input-group-text {
+  background-color: transparent !important;
+  color: #cccccc !important;
+  border: none !important;
+}
+
+/* Dark mode dropdowns and cards */
+.dark-mode .card {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border-color: #333 !important;
+}
+
+.dark-mode .card-header {
+  background-color: #222222 !important;
+  border-bottom-color: #333 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .card-body {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .list-group-item {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border-color: #333 !important;
+}
+
+.dark-mode .list-group-item:hover {
+  background-color: #333333 !important;
+}
+
+/* Dark mode icons and buttons */
+.dark-mode .icon-circle {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .icon-circle:hover {
+  background-color: #444444 !important;
+}
+
+/* Dark mode tables */
+.dark-mode .table {
+  color: #ffffff !important;
+}
+
+.dark-mode .table th {
+  border-color: #333 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .table td {
+  border-color: #333 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dark mode badges and pills */
+.dark-mode .badge-soft {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .btn-chip {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  border-color: #555 !important;
+}
+
+.dark-mode .btn-chip:hover {
+  background-color: #444444 !important;
+}
+
+/* Dark mode text colors */
+.dark-mode .text-muted {
+  color: #cccccc !important;
+}
+
+.dark-mode .text-dark {
+  color: #ffffff !important;
+}
+
+.dark-mode .link-viewall {
+  color: #66b3ff !important;
+}
+
+.dark-mode .card-head h5,
+.dark-mode .card-head h6 {
+  color: #ffffff !important;
+}
+
+/* Dark mode form controls */
+.dark-mode .form-control {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  border-color: #555 !important;
+}
+
+.dark-mode .form-control:focus {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  border-color: #777 !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25) !important;
+}
+
+.dark-mode .form-select {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  border-color: #555 !important;
+}
+
+.dark-mode .form-label {
+  color: #ffffff !important;
+}
+
+/* Dark mode modal */
+.dark-mode .modal-content {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border-color: #333 !important;
+}
+
+.dark-mode .modal-header {
+  border-bottom-color: #333 !important;
+}
+
+.dark-mode .modal-footer {
+  border-top-color: #333 !important;
+}
+
+.dark-mode .btn-close {
+  filter: invert(1) !important;
+}
+
+/* Dark mode calendar */
+.dark-mode .react-calendar {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .react-calendar__tile {
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .react-calendar__tile:hover {
+  background-color: #333333 !important;
+}
+
+.dark-mode .react-calendar__tile--active {
+  background-color: #555555 !important;
+  color: #ffffff !important;
+}
+
+/* Dark mode progress bars */
+.dark-mode .progress {
+  background-color: #333333 !important;
+}
+
+/* Dark mode dropdown menus */
+.dark-mode .dropdown-menu {
+  background-color: #1a1a1a !important;
+  border-color: #333 !important;
+}
+
+.dark-mode .dropdown-item {
+  color: #ffffff !important;
+}
+
+.dark-mode .dropdown-item:hover {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .dropdown-divider {
+  border-top-color: #333 !important;
+}
+
+/* Dark mode overview cards - keep original colors but darken slightly */
+.dark-mode .overview-card {
+  filter: brightness(0.8) !important;
+}
+
+/* Dark mode borders */
+.dark-mode .border {
+  border-color: #333 !important;
+}
+
+.dark-mode .border-bottom {
+  border-bottom-color: #333 !important;
+}
+
+/* Dark mode meeting tick */
+.dark-mode .meeting-tick {
+  background: #66b3ff !important;
+}
+
+/* Dark mode tiny bars */
+.dark-mode .tiny-bar {
+  background: #333333 !important;
+}
+
+.dark-mode .tiny-bar-fill {
+  background: #66b3ff !important;
+}
+
+/* Dark mode utility classes */
+.dark-mode .cursor-pointer {
+  cursor: pointer;
+}
+
+.dark-mode .hover-bg-light:hover {
+  background-color: #333333 !important;
+}
